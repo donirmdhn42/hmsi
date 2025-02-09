@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive - Institut Teknologi Al-Muhajirin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body class="bg-white text-black">
+    <!-- Navbar -->
+  <div class="navbar bg-white text-black fixed top-0 w-full shadow-lg z-50">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo & Nama HMSI -->
+        <div class="flex items-center gap-3">
+            <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo HMSI" class="h-10 w-10 ml-4">
+            <a class="text-xl font-bold">HMSI</a>
+        </div>
+        
+        <!-- Menu untuk Desktop -->
+        <div class="hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 space-x-1">
+                <li><a href="{{ url_for('home') }}" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold">About</a></li>
+                <li><a href="{{ url_for('home') }}#contact" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold">Contact</a></li>
+                <li><a href="{{ url_for('profile') }}" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold text-orange-600">Profile</a></li>
+                <li><a href="{{ url_for('visi') }}" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold">Visi & Misi</a></li>
+            </ul>
+        </div>
+
+        <!-- Menu untuk Mobile -->
+        <div class="dropdown dropdown-end lg:hidden">
+            <label tabindex="0" class="btn btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </label>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('home') }}#contact">Contact</a></li>
+                <li><a href="{{ url_for('profile') }}" class="text-orange-600">Profile</a></li>
+                <li><a href="{{ url_for('visi') }}">Visi & Misi</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        color: #000000;
+        background-color: #f7fafc;
+      }
+      .section-heading {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: hsl(0, 0%, 0%);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .text-content {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      .profile-logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 1.5rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .board-member {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        justify-content: center;
+      }
+      .board-member img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+      .board-member .name {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #333;
+      }
+      .board-member .position {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      .division {
+        margin-bottom: 3rem;
+        padding: 1rem;
+        background-color: #f8fafc;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .division .division-name {
+        font-weight: bold;
+        font-size: 1rem;
+        color: hsl(0, 0%, 0%);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .division .member-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .division .member-list .board-member {
+        flex-basis: 180px;
+        text-align: center;
+      }
+
+      .navigation {
+          text-align: center;
+          margin-top: 3rem;
+          font-size: 1rem;
+          outline: none;
+        }
+        .navigation a {
+          color: hsl(0, 0%, 0%);
+          text-decoration: none;
+          font-weight: 500;
+          margin: 0 1rem;
+        }
+        .navigation a:hover {
+          color: #333;
+        }
+    </style>
+
+    <!-- Profile Section -->
+    <div class="container mx-auto px-6 py-16">
+      <div class="bg-white p-8 rounded-sm shadow-sm max-w-3xl mx-auto">
+        <h3 class="section-heading">Profil HMSI</h3>
+
+        <!-- Logo -->
+        <div class="text-center">
+          <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo HMSI" class="profile-logo" />
+        </div>
+
+        <!-- Section Daftar Pengurus -->
+        <section class="container mx-auto px-6 py-12">
+        <h2 class="text-3xl md:text-2xl font-bold text-center text-black mb-7">Daftar Pengurus</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Pengurus 1 -->
+            <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition duration-300">
+                <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                     alt="Foto Pengurus 1" class="w-40 h-40 object-cover shadow-lg mb-4">
+                <p class="text-lg font-semibold">Basith Arrasyid</p>
+                <p class="text-sm text-gray-500">Ketua Umum</p>
+            </div>
+
+            <!-- Pengurus 2 -->
+            <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition duration-300">
+                <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                     alt="Foto Pengurus 2" class="w-40 h-40 object-cover shadow-lg mb-4">
+                <p class="text-lg font-semibold">Firdaus Fadhilah</p>
+                <p class="text-sm text-gray-500">Kepala Bidang</p>
+            </div>
+
+            <!-- Pengurus 3 -->
+            <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition duration-300">
+                <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                     alt="Foto Pengurus 3" class="w-40 h-40 object-cover shadow-lg mb-4">
+                <p class="text-lg font-semibold">Nazla Khouerun Nisa</p>
+                <p class="text-sm text-gray-500">Bendahara</p>
+            </div>
+
+            <!-- Pengurus 4 -->
+            <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition duration-300">
+                <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                     alt="Foto Pengurus 4" class="w-40 h-40 object-cover shadow-lg mb-4">
+                <p class="text-lg font-semibold">Dena Agustin</p>
+                <p class="text-sm text-gray-500">Sekretaris</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Divisions Section -->
+        <h2 class="section-heading">Divisi HMSI</h2>
+
+       <!-- Divisi 1 -->
+<div class="division bg-white p-6 rounded-lg shadow-md mb-6">
+    <h3 class="text-xl font-bold text-center text-black mb-4">Divisi Pengembangan Talenta & Budaya</h3>
+    <div class="grid grid-cols-3 md:grid-cols-3 gap-6 justify-center">
+        
+        <!-- Anggota 1 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 1" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 1</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+
+        <!-- Anggota 2 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 2" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 2</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+
+        <!-- Anggota 3 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 3" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 3</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+
+        <!-- Anggota 4 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 4" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 4</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+
+        <!-- Anggota 5 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 5" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 5</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+
+    </div>
+</div>
+
+        <!-- Divisi 2 -->
+        <div class="division">
+          <p class="division-name">Divisi Jaringan Strategis & dampak Sosial</p>
+          <div class="member-list">
+           <!-- Anggota 1 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 1" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 1</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+
+        <!-- Anggota 2 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 2" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 2</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+
+        <!-- Anggota 3 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 3" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 3</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+          </div>
+        </div>
+
+        <!-- Divisi 3 -->
+        <div class="division">
+          <p class="division-name">Divisi Inovasi & Pusat Keilmuan</p>
+          <div class="member-list">
+            <!-- Anggota 1 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 1" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 1</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+
+        <!-- Anggota 2 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 2" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 2</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+
+        <!-- Anggota 3 -->
+        <div class="flex flex-col items-center text-center">
+            <img src="https://img-new.cgtrader.com/items/3578351/1bea2a82f6/3d-nft-balaclava-stylized-character-free-low-poly-3d-model-3d-model-low-poly-obj-fbx-blend.jpg" 
+                 alt="Foto Anggota 3" class="w-32 h-32 object-cover rounded-lg shadow-md">
+            <p class="font-semibold mt-2">Anggota 3</p>
+            <p class="text-sm text-gray-500">Anggota</p>
+        </div>
+          </div>
+        </div>
+
+        <!-- Divisi 4 -->
+        <div class="division">
+          <p class="division-name">Divisi Sosial dan Masyarakat</p>
+          <div class="member-list">
+            <div class="board-member">
+              <img src="foto_anggota7.jpg" alt="Foto Anggota 7" />
+              <div>
+                <p class="name">Anggota 7</p>
+                <p class="position">Anggota</p>
+              </div>
+            </div>
+            <div class="board-member">
+              <img src="foto_anggota8.jpg" alt="Foto Anggota 8" />
+              <div>
+                <p class="name">Anggota 8</p>
+                <p class="position">Anggota</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divisi 5 -->
+        <div class="division">
+          <p class="division-name">Divisi Event dan Komunikasi</p>
+          <div class="member-list">
+            <div class="board-member">
+              <img src="foto_anggota9.jpg" alt="Foto Anggota 9" />
+              <div>
+                <p class="name">Anggota 9</p>
+                <p class="position">Anggota</p>
+              </div>
+            </div>
+            <div class="board-member">
+              <img src="foto_anggota10.jpg" alt="Foto Anggota 10" />
+              <div>
+                <p class="name">Anggota 10</p>
+                <p class="position">Anggota</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+         <div class="navigation flex justify-between">
+            <a href="{{ url_for('about') }}" class="ml-4">&larr; About</a>
+            <a href="{{ url_for('visi') }}" class="mr-4">Visi & Misi &rarr;</a>
+        </div>
+   </div>
+
+    <footer class="footer footer-center bg-white text-black p-10">
+      <aside class="text-center">
+        <!-- Ganti SVG dengan gambar logo -->
+        <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo" class="inline-block h-12 w-12" />
+        <p class="font-bold">
+          Himpunan Mahasiswa Sistem Informasi
+          <br />
+          Institut Teknologi Al - Muhajirin
+        </p>
+        <p>Copyright © 2025 - All right reserved</p>
+      </aside>
+      <nav>
+        <div class="grid grid-flow-col gap-4">
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              ></path>
+            </svg>
+          </a>
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+              ></path>
+            </svg>
+          </a>
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>

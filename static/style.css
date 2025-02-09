@@ -1,0 +1,32 @@
+.section-heading {
+    font-size: 1.25rem; /* Ukuran judul lebih besar */
+    color: #000000; /* Warna biru untuk judul */
+    margin-bottom: 1.5rem;
+    font-weight: 600; /* Menebalkan teks judul */
+  }
+  .text-content {
+    font-size: 1.125rem; /* Ukuran teks konten lebih besar untuk kenyamanan membaca */
+    color: #444444; /* Warna teks sedikit lebih terang agar nyaman dibaca dalam jangka panjang */
+    margin-bottom: 1.75rem;
+    line-height: 1.8;
+  }
+  .text-content ul {
+    margin-left: 1.5rem;
+  }
+  .navigation {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.125rem;
+  }
+  .navigation a {
+    color: hsl(0, 0%, 0%);
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+  }
+  .navigation a:hover {
+    color: #333333;
+  }
+
+
+  
