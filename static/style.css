@@ -1,32 +1,94 @@
 .section-heading {
-    font-size: 1.25rem; /* Ukuran judul lebih besar */
-    color: #000000; /* Warna biru untuk judul */
-    margin-bottom: 1.5rem;
-    font-weight: 600; /* Menebalkan teks judul */
-  }
-  .text-content {
-    font-size: 1.125rem; /* Ukuran teks konten lebih besar untuk kenyamanan membaca */
-    color: #444444; /* Warna teks sedikit lebih terang agar nyaman dibaca dalam jangka panjang */
-    margin-bottom: 1.75rem;
-    line-height: 1.8;
-  }
-  .text-content ul {
-    margin-left: 1.5rem;
-  }
-  .navigation {
-    text-align: center;
-    margin-top: 3rem;
-    font-size: 1.125rem;
-  }
-  .navigation a {
-    color: hsl(0, 0%, 0%);
-    text-decoration: none;
-    font-weight: 500;
-    margin: 0 1rem;
-  }
-  .navigation a:hover {
-    color: #333333;
-  }
+  font-size: 1.25rem; /* Ukuran judul lebih besar */
+  color: #000000; /* Warna biru untuk judul */
+  margin-bottom: 1.5rem;
+  font-weight: 600; /* Menebalkan teks judul */
+}
+.text-content {
+  font-size: 1.125rem; /* Ukuran teks konten lebih besar untuk kenyamanan membaca */
+  color: #444444; /* Warna teks sedikit lebih terang agar nyaman dibaca dalam jangka panjang */
+  margin-bottom: 1.75rem;
+  line-height: 1.8;
+}
+.text-content ul {
+  margin-left: 1.5rem;
+}
+.navigation {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.125rem;
+}
+.navigation a {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 1rem;
+}
+.navigation a:hover {
+  color: #333333;
+}
 
+.font-arial {
+  font-family: Arial, sans-serif;
+}
 
-  
+.profile-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.board-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+.board-member img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.board-member .name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+.board-member .position {
+  color: #666;
+  font-size: 0.9rem;
+}
+.division {
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.division .division-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: hsl(0, 0%, 0%);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.division .member-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.division .member-list .board-member {
+  flex-basis: 180px;
+  text-align: center;
+}
+.section-profile {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 0%);
+  margin-bottom: 1rem;
+  text-align: center;
+}
