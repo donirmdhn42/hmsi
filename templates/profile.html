@@ -1,57 +1,78 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}Profile - HMSI{% endblock %} {% block content %}
+<!-- Profile Section -->
+<section class="w-full px-6 sm:px-8 py-16 font-arial mt-1">
+  <div class="max-w-5xl mx-auto p-6 sm:p-10 bg-white shadow-lg rounded-lg">
+    <h3 class="text-3xl sm:text-4xl font-bold text-center text-black mb-6">Struktur Organisasi HMSI</h3>
 
-{% block title %}Profile - HMSI{% endblock %}
+    <!-- Logo HMSI -->
+    <div class="flex justify-center">
+      <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo HMSI" class="w-40 sm:w-48" />
+    </div>
 
-{% block content %}
-    <!-- Profile Section -->
-    <div class="container mx-auto px-6 py-16 font-arial -mt-20">
-      <div class="bg-white p-8 rounded-sm shadow-sm max-w-3xl mx-auto">
-        <h3 class="section-profile">Profil HMSI</h3>
+    <!-- Section Daftar Pengurus -->
+    <section class="mt-12">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center text-black mb-6">Daftar Pengurus</h2>
 
-        <!-- Logo -->
-        <div class="text-center">
-          <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo HMSI" class="profile-logo" />
-        </div>
-
-        <!-- Section Daftar Pengurus -->
-<section class="container mx-auto px-6 py-12">
-  <h2 class="text-3xl md:text-2xl font-bold text-center text-black mb-7">Daftar Pengurus</h2>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {% for p in pengurus %}
-      <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition duration-300">
-          <img src="{{ p.foto }}" alt="Foto {{ p.nama }}" class="w-40 h-40 object-cover shadow-lg mb-4">
+      <div class="flex flex-wrap justify-center gap-6">
+        {% for p in pengurus %}
+        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition duration-300 w-48">
+          <img src="{{ p.foto }}" alt="Foto {{ p.nama }}" class="w-32 h-32 object-cover rounded-lg shadow-lg mb-4" />
           <p class="text-lg font-semibold">{{ p.nama }}</p>
           <p class="text-sm text-gray-500">{{ p.jabatan }}</p>
+          <a href="{{ p.instagram }}" target="_blank" class="mt-2">
+            <img src="https://freepnglogo.com/images/all_img/1715966613instagram-logo-black-and-white-png.png" alt="Instagram" class="w-6 h-6 transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+          </a>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-  </div>
-</section>
+    </section>
 
-<!-- Section Divisi HMSI -->
-<section class="container mx-auto px-6 py-12">
-  <h2 class="text-3xl md:text-2xl font-bold text-center text-black mb-7">Divisi HMSI</h2>
+    <!-- Section Divisi HMSI -->
+    <section class="mt-12">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center text-black mb-6">Divisi HMSI</h2>
 
-  {% for d in divisi %}
-  <div class="division mb-8">
-      <p class="text-xl font-bold text-center text-black mb-4">{{ d.nama }}</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {% for d in divisi %}
+      <div class="mb-12 text-center">
+        <!-- Ketua Divisi -->
+        <h3 class="text-xl sm:text-2xl font-bold text-green-800 mb-4">{{ d.nama }}</h3>
+        <div class="flex flex-col items-center mb-4">
+          <div class="bg-green-100 p-4 rounded-lg shadow-md w-60 flex flex-col items-center">
+            <img src="{{ d.ketua.foto }}" alt="Foto {{ d.ketua.nama }}" class="w-28 h-28 object-cover rounded-lg shadow-md" />
+            <p class="font-semibold mt-2">{{ d.ketua.nama }}</p>
+            <p class="text-sm text-gray-500">Ketua Divisi</p>
+            <a href="{{ d.ketua.instagram }}" target="_blank" class="mt-2">
+              <img src="https://freepnglogo.com/images/all_img/1715966613instagram-logo-black-and-white-png.png" alt="Instagram" class="w-6 h-6 transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Garis Penghubung -->
+        <div class="flex justify-center">
+          <div class="w-1 h-8 bg-gray-400"></div>
+        </div>
+
+        <!-- Anggota Divisi -->
+        <div class="flex flex-wrap justify-center gap-4 mt-4">
           {% for a in d.anggota %}
-          <div class="flex flex-col items-center text-center">
-              <img src="{{ a.foto }}" alt="Foto {{ a.nama }}" class="w-32 h-32 object-cover rounded-lg shadow-md">
-              <p class="font-semibold mt-2">{{ a.nama }}</p>
-              <p class="text-sm text-gray-500">Anggota</p>
+          <div class="flex flex-col items-center text-center bg-gray-100 p-3 rounded-lg shadow-md w-32">
+            <img src="{{ a.foto }}" alt="Foto {{ a.nama }}" class="w-20 h-20 object-cover rounded-lg shadow-md" />
+            <p class="text-sm font-semibold mt-1">{{ a.nama }}</p>
+            <p class="text-xs text-gray-500">Anggota</p>
+            <a href="{{ a.instagram }}" target="_blank" class="mt-1">
+              <img src="https://freepnglogo.com/images/all_img/1715966613instagram-logo-black-and-white-png.png" alt="Instagram" class="w-5 h-5 transition-transform duration-300 hover:scale-110 hover:opacity-80" />
+            </a>
           </div>
           {% endfor %}
-      </div>
-  </div>
-  {% endfor %}
-</section>
-
-        <!-- Navigation Links -->
-         <div class="navigation flex justify-between">
-            <a href="{{ url_for('about') }}" class="ml-4">&larr; About</a>
-            <a href="{{ url_for('visi') }}" class="mr-4">Visi & Misi &rarr;</a>
         </div>
-   </div>
-   {% endblock %}
+      </div>
+      {% endfor %}
+    </section>
+
+    <!-- Navigation Links -->
+    <div class="flex flex-col sm:flex-row justify-between mt-8 text-center sm:text-left">
+      <a href="{{ url_for('about') }}" class="text-black hover:underline mb-4 sm:mb-0">&larr; About</a>
+      <a href="{{ url_for('visi') }}" class="text-black hover:underline">Visi & Misi &rarr;</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

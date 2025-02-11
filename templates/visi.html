@@ -1,68 +1,39 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}Visi & Misi - HMSI{% endblock %} {% block content %}
+<!-- Main Content Section -->
+<section class="w-full px-6 sm:px-8 py-16 font-arial mt-1">
+  <div class="max-w-4xl mx-auto p-6 sm:p-10 shadow-lg rounded-lg">
+    <h3 class="text-2xl sm:text-3xl font-bold text-center text-black mb-6">VISI & MISI</h3>
+    <p class="text-black leading-relaxed mb-4 text-sm sm:text-base">
+      Himpunan Mahasiswa Sistem Informasi (HMSI) adalah organisasi kemahasiswaan yang bertujuan untuk mengembangkan potensi mahasiswa di bidang sistem informasi, baik dalam aspek akademik maupun non-akademik. HMSI juga bertujuan untuk
+      memajukan program studi dan menjadi penghubung antara mahasiswa, dosen, dan dunia industri.
+    </p>
 
-{% block title %}Visi & Misi - HMSI{% endblock %}
+    <h2 class="text-xl sm:text-2xl font-semibold text-black mt-8">Visi</h2>
+    <p class="text-black leading-relaxed mb-6 text-sm sm:text-base">
+      Visi HMSI adalah untuk menjadi organisasi yang <strong>berkualitas</strong> dan <strong>berdaya saing tinggi</strong>, berfokus pada pengembangan sumber daya manusia di bidang sistem informasi serta memberikan kontribusi positif
+      kepada masyarakat dan dunia industri.
+    </p>
 
-{% block content %}
-    
-    <!-- Main Content Section -->
-    <div class="container mx-auto px-6 py-16 rounded-sm shadow-sm font-arial -mt-20">
-        <div class="bg-white p-8 max-w-3xl mx-auto">
-      
-            <h3 class="section-heading text-center">VISI & MISI</h3>
-            <p class="text-content">
-                Himpunan Mahasiswa Sistem Informasi (HMSI) adalah organisasi kemahasiswaan yang bertujuan untuk mengembangkan potensi mahasiswa di bidang sistem informasi, baik dalam aspek akademik maupun non-akademik. HMSI juga bertujuan untuk memajukan program studi dan menjadi penghubung antara mahasiswa, dosen, dan dunia industri.
-            </p>
-    
-            <h2 class="section-heading">Visi</h2>
-            <p class="text-content">
-                Visi HMSI adalah untuk menjadi organisasi yang <strong>berkualitas</strong> dan <strong>berdaya saing tinggi</strong>, berfokus pada pengembangan sumber daya manusia di bidang sistem informasi serta memberikan kontribusi positif kepada masyarakat dan dunia industri.
-            </p>
-    
-            <h2 class="section-heading">Misi</h2>
-            <p class="text-content">
-                Misi HMSI adalah sebagai berikut:
-                <ul class="text-content list-disc">
-                    <li>Menjadi wadah untuk <strong>mengembangkan keterampilan mahasiswa</strong> di bidang sistem informasi.</li>
-                    <li>Melaksanakan kegiatan yang berfokus pada <strong>pengembangan teknologi</strong> dan meningkatkan kualitas pendidikan di bidang sistem informasi.</li>
-                    <li>Memberikan kontribusi nyata dalam <strong>pengabdian kepada masyarakat</strong> melalui keahlian di bidang teknologi informasi.</li>
-                    <li>Meningkatkan kolaborasi antara mahasiswa dan dunia industri.</li>
-                    <li>Memfasilitasi mahasiswa untuk berprestasi dalam bidang akademik, kompetisi, dan kegiatan sosial.</li>
-                </ul>
-            </p>
-    
-            <h2 class="section-heading">Tujuan</h2>
-            <p class="text-content">
-                Tujuan HMSI adalah untuk menyediakan platform bagi mahasiswa sistem informasi dalam mengembangkan diri, baik dalam ranah akademik maupun profesional. Kami berkomitmen untuk mencetak generasi yang siap menghadapi perubahan teknologi, kreatif, dan memiliki integritas dalam menjalankan profesinya.
-            </p>
-    
-            <h2 class="section-heading">Strategi</h2>
-            <p class="text-content">
-                HMSI menerapkan strategi untuk mencapai visi dan misinya dengan mengadakan seminar, workshop, hackathon, dan kegiatan sosial lainnya. Kami juga berkolaborasi dengan industri untuk meningkatkan keterampilan mahasiswa dan memperluas peluang di dunia kerja.
-            </p>
-    
-            <h2 class="section-heading">Program Kerja</h2>
-            <ul class="text-content list-disc">
-                <li>Seminar dan Pelatihan Teknologi: Mengundang pembicara untuk memberikan wawasan terkini tentang teknologi informasi.</li>
-                <li>Workshop Keterampilan: Mengadakan workshop mengenai bahasa pemrograman, desain grafis, dan manajemen proyek.</li>
-                <li>Hackathon: Mengadakan kompetisi untuk merancang solusi berbasis teknologi informasi.</li>
-                <li>Kegiatan Sosial: Mengadakan program pengabdian masyarakat untuk memberikan dampak positif kepada masyarakat sekitar kampus.</li>
-            </ul>
-    
-            <h2 class="section-heading">Keanggotaan</h2>
-            <p class="text-content">
-                Keanggotaan HMSI terbuka untuk semua mahasiswa yang terdaftar di program studi Sistem Informasi. Selain itu, kami juga membuka kesempatan bagi mahasiswa dari berbagai disiplin ilmu untuk bergabung dan berkontribusi dalam berbagai kegiatan kami.
-            </p>
-    
-            <h2 class="section-heading">Mengapa Bergabung dengan HMSI?</h2>
-            <p class="text-content">
-                Bergabung dengan HMSI memberikan kesempatan untuk mengembangkan keterampilan teknis dan non-teknis, membangun jaringan dengan berbagai pihak dari dunia industri, serta menjadi pribadi yang lebih siap menghadapi dunia profesional.
-            </p>
-    
-            <!-- Navigation Links -->
-            <div class="navigation flex justify-between">
-                <a href="{{ url_for('profile') }}" class="ml-4">&larr; Profile</a>
-                <a href="{{ url_for('about') }}" class="mr-4">About &rarr;</a>
-            </div>
-        </div>
+    <h2 class="text-xl sm:text-2xl font-semibold text-black mt-8">Misi</h2>
+    <ul class="list-disc list-inside text-black leading-relaxed mb-6 text-sm sm:text-base">
+      <li>Menjadi wadah untuk <strong>mengembangkan keterampilan mahasiswa</strong> di bidang sistem informasi.</li>
+      <li>Melaksanakan kegiatan yang berfokus pada <strong>pengembangan teknologi</strong> dan meningkatkan kualitas pendidikan di bidang sistem informasi.</li>
+      <li>Memberikan kontribusi nyata dalam <strong>pengabdian kepada masyarakat</strong> melalui keahlian di bidang teknologi informasi.</li>
+      <li>Meningkatkan kolaborasi antara mahasiswa dan dunia industri.</li>
+      <li>Memfasilitasi mahasiswa untuk berprestasi dalam bidang akademik, kompetisi, dan kegiatan sosial.</li>
+    </ul>
+
+    <h2 class="text-xl sm:text-2xl font-semibold text-black mt-8">Strategi</h2>
+    <p class="text-black leading-relaxed mb-6 text-sm sm:text-base">
+      HMSI menerapkan strategi untuk mencapai visi dan misinya dengan mengadakan seminar, workshop, hackathon, dan kegiatan sosial lainnya. Kami juga berkolaborasi dengan industri untuk meningkatkan keterampilan mahasiswa dan memperluas
+      peluang di dunia kerja.
+    </p>
+
+    <!-- Navigation Links -->
+    <div class="flex flex-col sm:flex-row justify-between mt-6 text-center sm:text-left">
+      <a href="{{ url_for('profile') }}" class="text-black hover:underline mb-4 sm:mb-0">&larr; Profile</a>
+      <a href="{{ url_for('about') }}" class="text-black hover:underline">About &rarr;</a>
     </div>
-    {% endblock %}
+  </div>
+</section>
+{% endblock %}

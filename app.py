@@ -5,38 +5,94 @@ app = Flask(__name__)
 
 # Data Pengurus
 pengurus = [
-    {"nama": "Basith Arrasyid", "jabatan": "Ketua Umum", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
-    {"nama": "Firdaus Fadhilah", "jabatan": "Kepala Bidang", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
-    {"nama": "Dena Agustin", "jabatan": "Sekretaris", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
-    {"nama": "Nazla Khouerun Nisa", "jabatan": "Bendahara", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"}
+    {"nama": "Basith Arrasyid", "jabatan": "Ketua Umum", 
+     "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", 
+     "instagram": "https://instagram.com/"},
+    
+    {"nama": "Firdaus Fadhilah", "jabatan": "Kepala Bidang", 
+     "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", 
+     "instagram": "https://instagram.com/dhillisback"},
+    
+    {"nama": "Dena Agustin", "jabatan": "Sekretaris", 
+     "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", 
+     "instagram": "https://instagram.com/dennxrzn"},
+    
+    {"nama": "Nazla Khouerun Nisa", "jabatan": "Bendahara", 
+     "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", 
+     "instagram": "https://instagram.com/nazlakhrn.n"}
 ]
 
 # Data Divisi
 divisi = [
     {
-        "nama": "Divisi Jaringan Strategis & Dampak Sosial",
+        "nama": "Divisi Pengembangan Talenta & Budaya",
+        "ketua": {
+            "nama": "Fajar Karismawan", 
+            "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", 
+            "instagram": "https://instagram.com/iyeufajar"
+        },
         "anggota": [
-            {"nama": "Anggota 1", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
-            {"nama": "Anggota 2", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
-            {"nama": "Anggota 3", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
+            {"nama": "Muldan Dery Sudio", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota1"},
+            {"nama": "Dicky Permana", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota2"},
+            {"nama": "Abdul Azis", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota3"},
+            {"nama": "Siti Rabiatul", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota3"},
+        ]
+    },
+    {
+        "nama": "Divisi Jaringan Strategis & Dampak Sosial",
+        "ketua": {
+            "nama": "Dika Zaenal", 
+            "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", 
+            "instagram": "https://instagram.com/"
+        },
+        "anggota": [
+            {"nama": "Nurdin", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota4"},
+            {"nama": "Jaelani", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota5"},
+            {"nama": "Julio Sandra", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota6"},
         ]
     },
     {
         "nama": "Divisi Inovasi & Pusat Keilmuan",
+        "ketua": {
+            "nama": "M. Zacky Alghifar", 
+            "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", 
+            "instagram": "https://instagram.com/"
+        },
         "anggota": [
-            {"nama": "Anggota 4", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
-            {"nama": "Anggota 5", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
-            {"nama": "Anggota 6", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
+            {"nama": "Abdul Rohan", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota7"},
+            {"nama": "Azhari Fikri", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota8"},
+            {"nama": "Nurisa Istiqomah", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota8"},
+            {"nama": "Abdulah Syauki", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota8"},
         ]
     },
     {
-        "nama": "Divisi Sosial dan Masyarakat",
+        "nama": "Divisi Kreatif & Media",
+        "ketua": {
+            "nama": "Doni Setiawan", 
+            "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", 
+            "instagram": "https://instagram.com/"
+        },
         "anggota": [
-            {"nama": "Anggota 7", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
-            {"nama": "Anggota 8", "foto": "https://cdn-icons-png.flaticon.com/512/3869/3869383.png"},
+            {"nama": "Rizki Saepuloh", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota7"},
         ]
-    }
+    },
+    {
+        "nama": "Divisi Wirausaha & Keuangan",
+        "ketua": {
+            "nama": "Gilang Rivaldy", 
+            "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", 
+            "instagram": "https://instagram.com/"
+        },
+        "anggota": [
+            {"nama": "Ujang Fina", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota7"},
+            {"nama": "Siti Aminah", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota8"},
+            {"nama": "Siti Nurlaela", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota8"},
+            {"nama": "Tiara Dea", "foto": "https://th.bing.com/th/id/OIP.1tNu7B2LIqY006atkuD2sQHaHa?rs=1&pid=ImgDetMain", "instagram": "https://instagram.com/anggota8"},
+        ]
+    },
 ]
+
+
 
 # Data untuk Berita
 berita_list = [
@@ -114,7 +170,7 @@ dokumentasi_data = [
 
 @app.route('/')
 def home():
-    return render_template('index.html', berita=berita_list[:3], kegiatan=kegiatan_list[:3], publikasi=publikasi_data[:3], images=dokumentasi_data[:3])
+    return render_template('index.html', berita=berita_list[:3], kegiatan=kegiatan_list[:3], publikasi=publikasi_data[:3], images=dokumentasi_data[:5], show_hero=True)
 
 @app.route('/about')
 def about():
@@ -131,19 +187,19 @@ def visi():
 
 @app.route('/berita')
 def berita():
-    return render_template('berita.html', berita=berita_list)
+    return render_template('berita.html', berita=berita_list, show_hero=True)
 
 @app.route('/kegiatan')
 def kegiatan():
-    return render_template('kegiatan.html', kegiatan=kegiatan_list)
+    return render_template('kegiatan.html', kegiatan=kegiatan_list, show_hero=True)
 
 @app.route('/publikasi')
 def publikasi():
-    return render_template('publikasi.html', publikasi=publikasi_data)
+    return render_template('publikasi.html', publikasi=publikasi_data, show_hero=True)
 
 @app.route('/dokumentasi')
 def dokumentasi():
-    return render_template('dokumentasi.html', images=dokumentasi_data)
+    return render_template('dokumentasi.html', images=dokumentasi_data, show_hero=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
