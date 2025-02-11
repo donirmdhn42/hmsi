@@ -170,7 +170,7 @@ dokumentasi_data = [
 
 @app.route('/')
 def home():
-    return render_template('index.html', berita=berita_list[:3], kegiatan=kegiatan_list[:3], publikasi=publikasi_data[:3], images=dokumentasi_data[:5], show_hero=True)
+    return render_template('index.html', berita=berita_list[:3], kegiatan=kegiatan_list[:3], publikasi=publikasi_data[:3], images=dokumentasi_data[:5])
 
 @app.route('/about')
 def about():
@@ -187,19 +187,19 @@ def visi():
 
 @app.route('/berita')
 def berita():
-    return render_template('berita.html', berita=berita_list, show_hero=True)
+    return render_template('berita.html', berita=berita_list)
 
 @app.route('/kegiatan')
 def kegiatan():
-    return render_template('kegiatan.html', kegiatan=kegiatan_list, show_hero=True)
+    return render_template('kegiatan.html', kegiatan=kegiatan_list)
 
 @app.route('/publikasi')
 def publikasi():
-    return render_template('publikasi.html', publikasi=publikasi_data, show_hero=True)
+    return render_template('publikasi.html', publikasi=publikasi_data)
 
 @app.route('/dokumentasi')
 def dokumentasi():
-    return render_template('dokumentasi.html', images=dokumentasi_data, show_hero=True)
+    return render_template('dokumentasi.html', images=dokumentasi_data)
 
 if __name__ == '__main__':
     app.run(debug=True)

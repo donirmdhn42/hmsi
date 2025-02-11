@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="msapplication-navbutton-color" content="#000000" />
-
+    
     <link rel="icon" href="{{ url_for('static', filename='images/hmsi.png') }}" type="image/png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" />
@@ -72,17 +72,7 @@
         </div>
       </div>
     </div>
-
-    <!-- Hero hanya tampil jika `show_hero` = True -->
-    {% if show_hero %}
-    <div class="hero relative min-h-[70vh] w-full bg-cover bg-center text-white flex items-center justify-center" style="background-image: url('https://rmol.id/images/berita/normal/2019/08/534616_02490712082019_mahasiswa_ilustrasi.jpg')">
-      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-      <div class="relative z-10 px-5 text-center">
-        <h1 class="text-2xl md:text-4xl font-bold mb-2">Selamat Datang di Web Himpunan Mahasiswa Sistem Informasi</h1>
-        <p class="text-sm md:text-2xl mb-6 font-bold">Institut Teknologi Al-Muhajirin</p>
-      </div>
-    </div>
-    {% endif %}
+    
 
     <!-- Main Content -->
     <div class="container mx-auto px-6 py-16 mt-10">{% block content %}{% endblock %}</div>
