@@ -6,6 +6,7 @@
     <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="msapplication-navbutton-color" content="#000000">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>HMSI - ITM</title>
     <link rel="icon" href="{{ url_for('static', filename='images/hmsi.png') }}" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +16,7 @@
   <body class="bg-white text-black">
 
   <!-- Navbar -->
-  <div class="navbar bg-gradient-to-r from-blue-900 to-gray-800 p-4 text-white fixed top-0 w-full shadow-lg z-50">
+  <div class="navbar bg-white text-black fixed top-0 w-full shadow-lg z-50">
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo & Nama HMSI -->
         <div class="flex items-center gap-3">
@@ -41,7 +42,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </label>
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gradient-to-r from-blue-900 to-gray-800 p-4 text-white rounded-box w-52">
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white text-black rounded-box w-52">
                 <li><a href="{{ url_for('home') }}" class="text-orange-600">Home</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('home') }}#contact">Contact</a></li>
@@ -56,7 +57,7 @@
    <!-- Hero Section -->
 <div class="hero relative min-h-[70vh] w-full bg-cover bg-center text-white flex items-center" style="background-image: url('https://rmol.id/images/berita/normal/2019/08/534616_02490712082019_mahasiswa_ilustrasi.jpg')">
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-  <div class="container mx-auto text-center relative z-10 px-5">
+  <div class="container mx-auto text-center relative z-10 px-5" data-aos="zoom-in">
     <h1 class="text-2xl md:text-4xl font-bold mb-2">Selamat Datang di Web Himpunan Mahasiswa Sistem Informasi</h1>
     <p class="text-sm md:text-2xl mb-6 font-bold">Institut Teknologi Al-Muhajirin</p>
   </div>
@@ -81,7 +82,7 @@
   <h2 class="text-2xl font-bold text-black mb-4">Berita Terbaru</h2>
 
   {% for item in berita %}
-  <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-4 flex items-center space-x-4">
+  <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-4 flex items-center space-x-4" data-aos="fade-right">
       <img src="{{ item.gambar }}" alt="{{ item.judul }}" class="w-24 aspect-square object-cover rounded-lg" />
       <div>
           <h3 class="text-xl font-semibold text-black">{{ item.judul }}</h3>
@@ -99,7 +100,7 @@
   </div>
 
     <!-- Kegiatan -->
-    <div class="container mx-auto mt-10 px-5">
+    <div class="container mx-auto mt-10 px-5" data-aos="fade-right">
       <h2 class="text-2xl font-bold text-black mb-4">Informasi Kegiatan</h2>
 
      <!-- Jadwal Kegiatan -->
@@ -128,7 +129,7 @@
     </div>
 
      <!-- Publikasi -->
-     <div class="container mx-auto mt-10 px-5 bg-white p-5">
+     <div class="container mx-auto mt-10 px-5 bg-white p-5" data-aos="fade-right">
       <h2 class="text-2xl font-bold text-black mb-4">Publikasi</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {% for item in publikasi %}
@@ -150,7 +151,7 @@
     </div>
 
   <!-- Dokumentasi -->
-<div class="container mx-auto mt-10 px-5">
+<div class="container mx-auto mt-10 px-5" data-aos="fade-right">
   <h2 class="text-2xl font-bold text-black mb-1">Dokumentasi</h2>
   <p class="text-gray-600 text-sm mb-3">Klik gambar untuk melihat dalam ukuran penuh dan membaca informasi lengkapnya.</p>
   <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
@@ -187,7 +188,8 @@
     </div>
 
     <!-- Container Form -->
-    <div class="container mx-auto flex justify-center items-center min-h-screen" id="contact">
+    <div class="container mx-auto flex justify-center items-center min-h-screen" id="contact" data-aos="fade-up"
+    data-aos-duration="500">
       <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h2 class="text-2xl font-semibold text-center mb-6">Kontak Kami</h2>
 
@@ -224,7 +226,8 @@
     </div>
 
 
-    <footer class="footer footer-center bg-gradient-to-r from-blue-900 to-gray-800 p-4 text-white p-10">
+    <footer class="footer footer-center bg-white text-black p-10" data-aos="fade-up"
+    data-aos-duration="500">
       <aside class="text-center">
         <!-- Ganti SVG dengan gambar logo -->
         <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo" class="inline-block h-12 w-12" />
@@ -249,8 +252,12 @@
         </div>
       </nav>
     </footer>
-    
 
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
