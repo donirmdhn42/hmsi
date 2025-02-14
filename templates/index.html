@@ -1,11 +1,4 @@
-  <!--
-  Dokumentasi Kode HTML Template HMSI
-  ==================================
-  File ini merupakan template utama untuk situs web HMSI (Himpunan Mahasiswa Sistem Informasi).
-  Menggunakan Flask sebagai backend dan Tailwind CSS serta Daisy UI sebagai framework CSS.
-  -->
-
-  <!DOCTYPE html>
+ <!DOCTYPE html>
   <html lang="id">
     <head>
       <meta charset="utf-8" />
@@ -49,7 +42,6 @@
               <li><a href="{{ url_for('home') }}#contact" class="{% if request.endpoint == 'contact' %} text-orange-600 {% endif %}">Contact</a></li>
               <li><a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %} text-orange-600 {% endif %}">Profile</a></li>
               <li><a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 {% endif %}">Visi & Misi</a></li>
-              <li><a href="{{ url_for('docs') }}" class="{% if request.endpoint == 'docs' %} text-orange-600 {% endif %}">Docs</a></li>
             </ul>
           </div>
         </div>
