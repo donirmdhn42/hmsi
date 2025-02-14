@@ -1,84 +1,58 @@
-<!DOCTYPE html>
-<html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block title %}HMSI{% endblock %}</title>
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="msapplication-navbutton-color" content="#ffffff" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!--
+  Dokumentasi Kode HTML Template HMSI
+  ==================================
+  File ini merupakan template utama untuk situs web HMSI (Himpunan Mahasiswa Sistem Informasi).
+  Menggunakan Flask sebagai backend dan Tailwind CSS serta Daisy UI sebagai framework CSS.
+  -->
 
-    <link rel="icon" href="{{ url_for('static', filename='images/hmsi.png') }}" type="image/png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  </head>
-  <body class="bg-white text-black">
-    <!-- Navbar -->
-    <div class="navbar bg-white to-gray-800 text-black fixed top-0 w-full shadow-lg z-50">
-      <div class="container mx-auto flex justify-between items-center">
-        <!-- Logo & Nama HMSI -->
-        <div class="flex items-center gap-3">
-          <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo HMSI" class="h-10 w-10 ml-4" />
-          <a class="text-xl font-bold">HMSI</a>
-        </div>
+  <!DOCTYPE html>
+  <html lang="id">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>{% block title %}HMSI{% endblock %}</title>
 
-        <!-- Menu untuk Desktop -->
-        <div class="hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 space-x-1">
-            <li>
-              <a href="{{ url_for('home') }}" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold {% if request.endpoint == 'home' %} text-orange-600 {% endif %}"> Home </a>
-            </li>
-            <li>
-              <a href="{{ url_for('about') }}" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold {% if request.endpoint == 'about' %} text-orange-600 {% endif %}"> About </a>
-            </li>
-            <li>
-              <a href="{{ url_for('home') }}#contact" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold {% if request.endpoint == 'contact' %} text-orange-600 {% endif %}"> Contact </a>
-            </li>
-            <li>
-              <a href="{{ url_for('profile') }}" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold {% if request.endpoint == 'profile' %} text-orange-600 {% endif %}"> Profile </a>
-            </li>
-            <li>
-              <a href="{{ url_for('visi') }}" class="hover:bg-grey-100 px-3 py-2 rounded-lg font-bold {% if request.endpoint == 'visi' %} text-orange-600 {% endif %}"> Visi & Misi </a>
-            </li>
-            <li>
-              <a href="{{ url_for('docs') }}" class="hover:bg-grey-100 px-1 py-2 rounded-lg font-bold {% if request.endpoint == 'docs' %} text-orange-600 {% endif %}"> Docs </a>
-            </li>
-          </ul>
-        </div>
+      <!-- Metadata untuk warna tema -->
+      <meta name="theme-color" content="#ffffff" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="msapplication-navbutton-color" content="#ffffff" />
 
-        <!-- Menu untuk Mobile -->
-        <div class="dropdown dropdown-end lg:hidden">
-          <label tabindex="0" class="btn btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </label>
-          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white text-black rounded-box w-52">
-            <li>
-              <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %} text-orange-600 {% endif %}"> Home </a>
-            </li>
-            <li>
-              <a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %} text-orange-600 {% endif %}"> About </a>
-            </li>
-            <li>
-              <a href="{{ url_for('home') }}#contact" class="{% if request.endpoint == 'contact' %} text-orange-600 {% endif %}"> Contact </a>
-            </li>
-            <li>
-              <a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %} text-orange-600 {% endif %}"> Profile </a>
-            </li>
-            <li>
-              <a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 {% endif %}"> Visi & Misi </a>
-            </li>
-            <li>
-              <a href="{{ url_for('docs') }}" class="{% if request.endpoint == 'docs' %} text-orange-600 {% endif %}"> Docs </a>
-            </li>
-          </ul>
+      <!-- CSS Animasi -->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+      <!-- Favicon -->
+      <link rel="icon" href="{{ url_for('static', filename='images/hmsi.png') }}" type="image/png" />
+
+      <!-- Framework CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" />
+
+      <!-- File CSS tambahan -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    </head>
+    <body class="bg-white text-black">
+      <!-- Navbar -->
+      <div class="navbar bg-white text-black fixed top-0 w-full shadow-lg z-50">
+        <div class="container mx-auto flex justify-between items-center">
+          <!-- Logo & Nama HMSI -->
+          <div class="flex items-center gap-3">
+            <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo HMSI" class="h-10 w-10 ml-4" />
+            <a class="text-xl font-bold">HMSI</a>
+          </div>
+
+          <!-- Menu untuk Desktop -->
+          <div class="hidden lg:flex font-bold">
+            <ul class="menu menu-horizontal px-1 space-x-1">
+              <li><a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %} text-orange-600 {% endif %}">Home</a></li>
+              <li><a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %} text-orange-600 {% endif %}">About</a></li>
+              <li><a href="{{ url_for('home') }}#contact" class="{% if request.endpoint == 'contact' %} text-orange-600 {% endif %}">Contact</a></li>
+              <li><a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %} text-orange-600 {% endif %}">Profile</a></li>
+              <li><a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 {% endif %}">Visi & Misi</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
   
     <!-- Hero Section -->

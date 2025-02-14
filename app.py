@@ -201,10 +201,7 @@ def publikasi():
 def dokumentasi():
     return render_template('dokumentasi.html', images=dokumentasi_data)
 
-@app.route('/docs')
-def docs():
-    return render_template('docs.html')
-
+    
 if __name__ == '__main__':
     app.run(debug=True)
     
