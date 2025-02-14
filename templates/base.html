@@ -37,13 +37,55 @@
         <!-- Menu untuk Desktop -->
         <div class="hidden lg:flex font-bold">
           <ul class="menu menu-horizontal px-1 space-x-1">
-            <li><a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %} text-orange-600 {% endif %}">Home</a></li>
-            <li><a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %} text-orange-600 {% endif %}">About</a></li>
-            <li><a href="{{ url_for('home') }}#contact" class="{% if request.endpoint == 'contact' %} text-orange-600 {% endif %}">Contact</a></li>
-            <li><a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %} text-orange-600 {% endif %}">Profile</a></li>
-            <li><a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 {% endif %}">Visi & Misi</a></li>
+            <li>
+              <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %} text-orange-600 {% endif %}"> Home </a>
+            </li>
+            <li>
+              <a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %} text-orange-600 {% endif %}"> About </a>
+            </li>
+            <li>
+              <a href="{{ url_for('home') }}#contact"> Contact </a>
+            </li>
+            <li>
+              <a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %} text-orange-600 {% endif %}"> Profile </a>
+            </li>
+            <li>
+              <a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 {% endif %}"> Visi & Misi </a>
+            </li>
           </ul>
         </div>
+
+        <!-- Menu untuk Mobile (Hamburger) -->
+        <div class="lg:hidden">
+          <label for="menu-toggle" class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </label>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu Mobile -->
+      <input type="checkbox" id="menu-toggle" class="drawer-toggle hidden" />
+      <div class="drawer-side">
+        <label for="menu-toggle" class="drawer-overlay"></label>
+        <ul class="menu p-4 w-64 min-h-full bg-white text-black font-bold">
+          <li>
+            <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %} text-orange-600 font-bold {% endif %}"> Home </a>
+          </li>
+          <li>
+            <a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %} text-orange-600 font-bold {% endif %}"> About </a>
+          </li>
+          <li>
+            <a href="{{ url_for('home') }}#contact"> Contact </a>
+          </li>
+          <li>
+            <a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %} text-orange-600 font-bold {% endif %}"> Profile </a>
+          </li>
+          <li>
+            <a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 font-bold {% endif %}"> Visi & Misi </a>
+          </li>
+        </ul>
       </div>
     </div>
 

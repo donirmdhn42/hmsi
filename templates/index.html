@@ -1,39 +1,70 @@
+<<<<<<< HEAD
  <!DOCTYPE html>
   <html lang="id">
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>{% block title %}HMSI{% endblock %}</title>
+=======
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}HMSI{% endblock %}</title>
 
-      <!-- Metadata untuk warna tema -->
-      <meta name="theme-color" content="#ffffff" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="msapplication-navbutton-color" content="#ffffff" />
+    <!-- Metadata untuk warna tema -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="msapplication-navbutton-color" content="#ffffff" />
+>>>>>>> 39e371f (Update)
 
-      <!-- CSS Animasi -->
-      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- CSS Animasi -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-      <!-- Favicon -->
-      <link rel="icon" href="{{ url_for('static', filename='images/hmsi.png') }}" type="image/png" />
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/hmsi.png') }}" type="image/png" />
 
-      <!-- Framework CSS -->
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" />
+    <!-- Framework CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" />
 
-      <!-- File CSS tambahan -->
-      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-    </head>
-    <body class="bg-white text-black">
-      <!-- Navbar -->
-      <div class="navbar bg-white text-black fixed top-0 w-full shadow-lg z-50">
-        <div class="container mx-auto flex justify-between items-center">
-          <!-- Logo & Nama HMSI -->
-          <div class="flex items-center gap-3">
-            <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo HMSI" class="h-10 w-10 ml-4" />
-            <a class="text-xl font-bold">HMSI</a>
-          </div>
+    <!-- File CSS tambahan -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-white text-black">
+    <!-- Navbar -->
+    <div class="navbar bg-white text-black fixed top-0 w-full shadow-lg z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo & Nama HMSI -->
+        <div class="flex items-center gap-3">
+          <img src="{{ url_for('static', filename='images/hmsi.png') }}" alt="Logo HMSI" class="h-10 w-10 ml-4" />
+          <a class="text-xl font-bold">HMSI</a>
+        </div>
 
+        <!-- Menu untuk Desktop -->
+        <div class="hidden lg:flex font-bold">
+          <ul class="menu menu-horizontal px-1 space-x-1">
+            <li>
+              <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %} text-orange-600 {% endif %}"> Home </a>
+            </li>
+            <li>
+              <a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %} text-orange-600 {% endif %}"> About </a>
+            </li>
+            <li>
+              <a href="{{ url_for('home') }}#contact"> Contact </a>
+            </li>
+            <li>
+              <a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %} text-orange-600 {% endif %}"> Profile </a>
+            </li>
+            <li>
+              <a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 {% endif %}"> Visi & Misi </a>
+            </li>
+          </ul>
+        </div>
+
+<<<<<<< HEAD
           <!-- Menu untuk Desktop -->
           <div class="hidden lg:flex font-bold">
             <ul class="menu menu-horizontal px-1 space-x-1">
@@ -44,8 +75,41 @@
               <li><a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 {% endif %}">Visi & Misi</a></li>
             </ul>
           </div>
+=======
+        <!-- Menu untuk Mobile (Hamburger) -->
+        <div class="lg:hidden">
+          <label for="menu-toggle" class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </label>
+>>>>>>> 39e371f (Update)
         </div>
       </div>
+
+      <!-- Sidebar Menu Mobile -->
+      <input type="checkbox" id="menu-toggle" class="drawer-toggle hidden" />
+      <div class="drawer-side">
+        <label for="menu-toggle" class="drawer-overlay"></label>
+        <ul class="menu p-4 w-64 min-h-full bg-white text-black font-bold">
+          <li>
+            <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %} text-orange-600 font-bold {% endif %}"> Home </a>
+          </li>
+          <li>
+            <a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %} text-orange-600 font-bold {% endif %}"> About </a>
+          </li>
+          <li>
+            <a href="{{ url_for('home') }}#contact"> Contact </a>
+          </li>
+          <li>
+            <a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %} text-orange-600 font-bold {% endif %}"> Profile </a>
+          </li>
+          <li>
+            <a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 font-bold {% endif %}"> Visi & Misi </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
   
    <!-- Hero Section -->
