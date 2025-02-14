@@ -1,11 +1,3 @@
-<<<<<<< HEAD
- <!DOCTYPE html>
-  <html lang="id">
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>{% block title %}HMSI{% endblock %}</title>
-=======
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -17,7 +9,6 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="msapplication-navbutton-color" content="#ffffff" />
->>>>>>> 39e371f (Update)
 
     <!-- CSS Animasi -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -64,18 +55,6 @@
           </ul>
         </div>
 
-<<<<<<< HEAD
-          <!-- Menu untuk Desktop -->
-          <div class="hidden lg:flex font-bold">
-            <ul class="menu menu-horizontal px-1 space-x-1">
-              <li><a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %} text-orange-600 {% endif %}">Home</a></li>
-              <li><a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %} text-orange-600 {% endif %}">About</a></li>
-              <li><a href="{{ url_for('home') }}#contact" class="{% if request.endpoint == 'contact' %} text-orange-600 {% endif %}">Contact</a></li>
-              <li><a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %} text-orange-600 {% endif %}">Profile</a></li>
-              <li><a href="{{ url_for('visi') }}" class="{% if request.endpoint == 'visi' %} text-orange-600 {% endif %}">Visi & Misi</a></li>
-            </ul>
-          </div>
-=======
         <!-- Menu untuk Mobile (Hamburger) -->
         <div class="lg:hidden">
           <label for="menu-toggle" class="btn btn-ghost btn-circle">
@@ -83,7 +62,6 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
           </label>
->>>>>>> 39e371f (Update)
         </div>
       </div>
 
