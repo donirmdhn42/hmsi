@@ -1,45 +1,45 @@
 {% extends "base.html" %} {% block title %}About - HMSI{% endblock %} {% block content %}
 
 <!-- Main Content Section -->
-<section class="w-full px-6 sm:px-8 py-16 font-arial mt-1" data-aos="fade-up"
-data-aos-duration="500">
-  <div class="max-w-4xl mx-auto p-6 sm:p-10 shadow-lg rounded-lg">
-    <h3 class="text-2xl sm:text-3xl font-bold text-center text-black mb-6">ABOUT HMSI</h3>
-    <p class="text-black leading-relaxed mb-4 text-sm sm:text-base">
-      Himpunan Mahasiswa Sistem Informasi (HMSI) adalah sebuah organisasi kemahasiswaan yang bergerak di bawah naungan program studi Sistem Informasi di Institut Teknologi Al - Muhajirin. Organisasi ini dibentuk untuk menjadi wadah bagi
-      mahasiswa dalam mengembangkan potensi diri, baik di bidang akademik maupun non-akademik.
+<section class="w-full px-6 sm:px-8 py-10 font-arial" data-aos="fade-up" data-aos-duration="500">
+  <div class="max-w-4xl mx-auto">
+    <h3 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">ABOUT HMSI</h3>
+    <p class="text-gray-900 dark:text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
+      Himpunan Mahasiswa Sistem Informasi (HMSI) adalah sebuah organisasi kemahasiswaan yang bergerak di bawah naungan program studi Sistem Informasi di Institut Teknologi Al - Muhajirin. Organisasi ini dibentuk untuk menjadi wadah bagi mahasiswa dalam mengembangkan potensi diri, baik di bidang akademik maupun non-akademik.
     </p>
-    <p class="text-black leading-relaxed mb-6 text-sm sm:text-base">
-      HMSI berperan sebagai penghubung antara mahasiswa dengan dosen serta pihak lain di dalam maupun luar kampus, yang bertujuan untuk memajukan program studi Sistem Informasi. Selain itu, HMSI juga memiliki peran penting dalam membentuk
-      karakter mahasiswa yang profesional dan berintegritas.
+    <p class="text-gray-900 dark:text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
+      HMSI berperan sebagai penghubung antara mahasiswa dengan dosen serta pihak lain di dalam maupun luar kampus, yang bertujuan untuk memajukan program studi Sistem Informasi. Selain itu, HMSI juga memiliki peran penting dalam membentuk karakter mahasiswa yang profesional dan berintegritas.
     </p>
 
-    <h2 class="text-xl sm:text-2xl font-semibold text-black mt-8">Tujuan</h2>
-    <p class="text-black leading-relaxed mb-6 text-sm sm:text-base">
+    <h2 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mt-6">Tujuan</h2>
+    <p class="text-gray-900 dark:text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
       HMSI bertujuan untuk menyediakan berbagai platform bagi mahasiswa Sistem Informasi untuk mengembangkan diri, baik dalam ranah akademik, keterampilan profesional, maupun kepemimpinan.
     </p>
 
-    <h2 class="text-xl sm:text-2xl font-semibold text-black mt-8">Sejarah Singkat</h2>
-    <p class="text-black leading-relaxed mb-6 text-sm sm:text-base">
+    <h2 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mt-6">Sejarah Singkat</h2>
+    <p class="text-gray-900 dark:text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
       HMSI didirikan pada tahun 2022 dengan tujuan utama untuk membentuk komunitas yang solid di kalangan mahasiswa Sistem Informasi. Sejak saat itu, HMSI telah menjadi tempat berkembangnya ide-ide kreatif dan inovatif.
     </p>
 
-    <h2 class="text-xl sm:text-2xl font-semibold text-black mt-8">Program Kerja</h2>
-    <ul class="list-disc list-inside text-black leading-relaxed mb-6 text-sm sm:text-base">
+    <h2 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mt-6">Program Kerja</h2>
+    <ul class="list-disc list-inside text-gray-900 dark:text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
       <li>Organisasi Seminar Teknologi</li>
       <li>Workshop dan Pelatihan Keterampilan</li>
       <li>Hackathon dan Kompetisi</li>
       <li>Kegiatan Sosial</li>
     </ul>
 
-    <h2 class="text-xl sm:text-2xl font-semibold text-black mt-8">Keanggotaan</h2>
-    <p class="text-black leading-relaxed mb-6 text-sm sm:text-base">Keanggotaan HMSI terbuka untuk seluruh mahasiswa yang terdaftar dalam program studi Sistem Informasi di Institut Teknologi Al - Muhajirin.</p>
+    <h2 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mt-6">Keanggotaan</h2>
+    <p class="text-gray-900 dark:text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
+      Keanggotaan HMSI terbuka untuk seluruh mahasiswa yang terdaftar dalam program studi Sistem Informasi di Institut Teknologi Al - Muhajirin.
+    </p>
 
     <!-- Navigation Links -->
     <div class="flex flex-col sm:flex-row justify-between mt-6 text-center sm:text-left">
-      <a href="{{ url_for('visi') }}" class="text-black hover:underline mb-4 sm:mb-0">&larr; Visi & Misi</a>
-      <a href="{{ url_for('profile') }}" class="text-black hover:underline">Profile &rarr;</a>
+      <a href="{{ url_for('visi') }}" class="text-dark dark:text-white mb-4 sm:mb-0">&larr; Visi & Misi</a>
+      <a href="{{ url_for('profile') }}" class="text-dark dark:text-white">Profile &rarr;</a>
     </div>
   </div>
 </section>
+
 {% endblock %}

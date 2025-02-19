@@ -1,9 +1,9 @@
 {% extends "base.html" %} {% block title %}Profile - HMSI{% endblock %} {% block content %}
+
 <!-- Profile Section -->
-<section class="w-full px-6 sm:px-8 py-16 font-arial mt-1" data-aos="fade-up"
-data-aos-duration="500">
-  <div class="max-w-5xl mx-auto p-6 sm:p-10 bg-white shadow-lg rounded-lg">
-    <h3 class="text-3xl sm:text-4xl font-bold text-center text-black mb-6">Struktur Organisasi HMSI</h3>
+<section class="w-full px-6 sm:px-8 py-10 font-arial" data-aos="fade-up" data-aos-duration="500">
+  <div class="max-w-4xl mx-auto">
+    <h3 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">Struktur Organisasi HMSI</h3>
 
     <!-- Logo HMSI -->
     <div class="flex justify-center">
@@ -12,14 +12,14 @@ data-aos-duration="500">
 
     <!-- Section Daftar Pengurus -->
     <section class="mt-12">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center text-black mb-6">Daftar Pengurus</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">Daftar Pengurus</h2>
 
       <div class="flex flex-wrap justify-center gap-6">
         {% for p in pengurus %}
-        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition duration-300 w-48">
-          <img src="{{ p.foto }}" alt="Foto {{ p.nama }}" class="w-32 h-32 object-cover rounded-lg shadow-lg mb-4" />
-          <p class="text-lg font-semibold">{{ p.nama }}</p>
-          <p class="text-sm text-gray-500">{{ p.jabatan }}</p>
+        <div class="p-6 flex flex-col items-center text-center w-48 min-h-[200px]">
+          <img src="{{ p.foto }}" alt="Foto {{ p.nama }}" class="w-32 h-32 object-cover rounded-lg mb-4" />
+          <p class="text-base font-semibold text-gray-900 dark:text-white">{{ p.nama }}</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">{{ p.jabatan }}</p>
           <a href="{{ p.instagram }}" target="_blank" class="mt-2">
             <img src="https://freepnglogo.com/images/all_img/1715966613instagram-logo-black-and-white-png.png" alt="Instagram" class="w-6 h-6 transition-transform duration-300 hover:scale-110 hover:opacity-80" />
           </a>
@@ -30,17 +30,17 @@ data-aos-duration="500">
 
     <!-- Section Divisi HMSI -->
     <section class="mt-12">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center text-black mb-6">Divisi HMSI</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">Divisi HMSI</h2>
 
       {% for d in divisi %}
       <div class="mb-12 text-center">
         <!-- Ketua Divisi -->
-        <h3 class="text-xl sm:text-2xl font-bold text-black-900 mb-4">{{ d.nama }}</h3>
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">{{ d.nama }}</h3>
         <div class="flex flex-col items-center mb-4">
-          <div class="bg-gray-300 p-4 rounded-lg shadow-md w-60 flex flex-col items-center">
-            <img src="{{ d.ketua.foto }}" alt="Foto {{ d.ketua.nama }}" class="w-28 h-28 object-cover rounded-lg shadow-md" />
-            <p class="font-semibold mt-2">{{ d.ketua.nama }}</p>
-            <p class="text-sm text-gray-500">Ketua Divisi</p>
+          <div class="p-4 w-60 flex flex-col items-center min-h-[200px]">
+            <img src="{{ d.ketua.foto }}" alt="Foto {{ d.ketua.nama }}" class="w-28 h-28 object-cover rounded-lg" />
+            <p class="text-base font-semibold mt-2 text-gray-900 dark:text-white">{{ d.ketua.nama }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Ketua Divisi</p>
             <a href="{{ d.ketua.instagram }}" target="_blank" class="mt-2">
               <img src="https://freepnglogo.com/images/all_img/1715966613instagram-logo-black-and-white-png.png" alt="Instagram" class="w-6 h-6 transition-transform duration-300 hover:scale-110 hover:opacity-80" />
             </a>
@@ -49,16 +49,16 @@ data-aos-duration="500">
 
         <!-- Garis Penghubung -->
         <div class="flex justify-center">
-          <div class="w-1 h-8 bg-gray-400"></div>
+          <div class="w-1 h-8 bg-gray-400 dark:bg-gray-600"></div>
         </div>
 
         <!-- Anggota Divisi -->
         <div class="flex flex-wrap justify-center gap-4 mt-4">
           {% for a in d.anggota %}
-          <div class="flex flex-col items-center text-center bg-gray-100 p-3 rounded-lg shadow-md w-32">
-            <img src="{{ a.foto }}" alt="Foto {{ a.nama }}" class="w-20 h-20 object-cover rounded-lg shadow-md" />
-            <p class="text-sm font-semibold mt-1">{{ a.nama }}</p>
-            <p class="text-xs text-gray-500">Anggota</p>
+          <div class="flex flex-col items-center text-center p-3 w-32 min-h-[150px]">
+            <img src="{{ a.foto }}" alt="Foto {{ a.nama }}" class="w-20 h-20 object-cover rounded-lg" />
+            <p class="text-sm font-semibold mt-1 text-gray-900 dark:text-white">{{ a.nama }}</p>
+            <p class="text-xs text-gray-600 dark:text-gray-300">Anggota</p>
             <a href="{{ a.instagram }}" target="_blank" class="mt-1">
               <img src="https://freepnglogo.com/images/all_img/1715966613instagram-logo-black-and-white-png.png" alt="Instagram" class="w-5 h-5 transition-transform duration-300 hover:scale-110 hover:opacity-80" />
             </a>
@@ -71,8 +71,8 @@ data-aos-duration="500">
 
     <!-- Navigation Links -->
     <div class="flex flex-col sm:flex-row justify-between mt-8 text-center sm:text-left">
-      <a href="{{ url_for('about') }}" class="text-black hover:underline mb-4 sm:mb-0">&larr; About</a>
-      <a href="{{ url_for('visi') }}" class="text-black hover:underline">Visi & Misi &rarr;</a>
+      <a href="{{ url_for('about') }}" class="text-gray-900 dark:text-white hover:underline mb-4 sm:mb-0">&larr; About</a>
+      <a href="{{ url_for('visi') }}" class="text-gray-900 dark:text-white hover:underline">Visi & Misi &rarr;</a>
     </div>
   </div>
 </section>

@@ -26,3 +26,23 @@ document.getElementById('contactForm').addEventListener('submit', function (even
   function closeModal() {
     document.getElementById('successModal').classList.add('hidden');
   }
+
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark'); // Pakai documentElement agar Tailwind mendeteksi
+    const isDark = document.documentElement.classList.contains('dark');
+
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+    // Ubah ikon berdasarkan mode
+    document.getElementById('theme-icon').className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.getElementById('theme-icon').className = 'fas fa-moon';
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').className = 'fas fa-sun';
+    }
+  });
